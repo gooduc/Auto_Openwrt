@@ -113,7 +113,7 @@ jobs:
         working-directory: ./openwrt
         run: |
           source ../scripts/BaseScripts.sh
-          Diy-Part2_x86_64
+          Diy-Part2
       - name: Upload Firmware to Releases
         uses: softprops/action-gh-release@v1
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
