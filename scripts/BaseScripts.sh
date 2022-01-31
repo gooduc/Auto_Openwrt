@@ -16,7 +16,6 @@ Diy-Part1() {
     git clone https://github.com/kenzok8/small-package.git
     git clone https://github.com/jerrykuku/luci-theme-argon.git
     git clone https://github.com/KFERMercer/openwrt-baidupcs-web.git
-    git clone https://github.com/zxl78585/luci-app-filetransfer.git
     rm -rf small-package/luci-app-openclash
     git clone https://github.com/vernesong/OpenClash.git -b dev
     echo "$KERNEL_HASH" > $GITHUB_WORKSPACE/openwrt/vermagic
