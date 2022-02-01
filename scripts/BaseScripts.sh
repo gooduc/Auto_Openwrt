@@ -3,6 +3,8 @@
 
 Core_Newifi_D2(){
     Author=CodeTiger
+    Change_Wifi=true
+    Change_DHCP=true
 }
 
 Core_x86_64(){
@@ -27,6 +29,15 @@ Diy-Part1() {
     sed -i '/2.openwrt.pool.ntp.org/d' $GITHUB_WORKSPACE/openwrt/package/base-files/files/bin/config_generate
     sed -i '/3.openwrt.pool.ntp.org/d' $GITHUB_WORKSPACE/openwrt/package/base-files/files/bin/config_generate
     sed -i '/mkhash md5/c\\tcp $(TOPDIR)\/vermagic $(LINUX_DIR)\/.vermagic' $GITHUB_WORKSPACE/openwrt/include/kernel-defaults.mk
+    mkdir -p $GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/config
+    if [ "$Change_Wifi" == "true" ]; then
+        cd $GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/config
+        /bin/cp $GITHUB_WORKSPACE/Customize/newifiD2_wireless ./wireless
+    fi
+    if [ "$Change_DHCP" == "true" ]; then
+        cd $GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/config
+        /bin/cp $GITHUB_WORKSPACE/Customize/newifiD2_dhcp ./dhcp
+    fi
 }
 
 Diy-Part2() {
