@@ -19,7 +19,7 @@ Diy-Part1() {
     git clone https://github.com/jerrykuku/luci-theme-argon.git
     git clone https://github.com/KFERMercer/openwrt-baidupcs-web.git
     rm -rf small-package/luci-app-openclash
-    git clone https://github.com/vernesong/OpenClash.git -b dev
+    git clone https://github.com/vernesong/OpenClash.git
     echo "$KERNEL_HASH" > $GITHUB_WORKSPACE/openwrt/vermagic
     sed -i 's/${ipaddr:-"192.168.1.1"}/${ipaddr:-"10.10.1.1"}/g' $GITHUB_WORKSPACE/openwrt/package/base-files/files/bin/config_generate
     sed -i 's/${ipaddr:-"192.168.$((addr_offset++)).1"}/${ipaddr:-"10.10.$((addr_offset++)).1"}/g' $GITHUB_WORKSPACE/openwrt/package/base-files/files/bin/config_generate
