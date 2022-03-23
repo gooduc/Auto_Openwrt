@@ -37,9 +37,6 @@ config odhcpd 'odhcpd'
         option loglevel '4'
 
 config host
-        option mac '90:B1:1C:06:2E:D2'
-        option ip '10.10.1.254'
-        option name 'idrac'
         option dns '1'
 
 config dhcp 'wan6'
