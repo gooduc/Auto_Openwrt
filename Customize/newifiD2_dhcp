@@ -37,6 +37,9 @@ config odhcpd 'odhcpd'
         option loglevel '4'
 
 config host
+        option ip '192.168.8.1'
+        option name 'idrac'
+        option dns '1'
         option dns '1'
 
 config dhcp 'wan6'
